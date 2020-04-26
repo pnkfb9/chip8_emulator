@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="untitled" targetName="untitled" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6527dd6e-e99a-4171-8fe8-99bd1c624a17" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1Z7g6RWillOHtYZwfMlHsVlFOcz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/roms" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/roms" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="untitled" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="untitled" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="untitled">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6527dd6e-e99a-4171-8fe8-99bd1c624a17" name="Default Changelist" comment="" />
+      <created>1584195370770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584195370770</updated>
+      <workItem from="1584195373355" duration="8439000" />
+      <workItem from="1584264622271" duration="4798000" />
+      <workItem from="1584281922196" duration="5982000" />
+      <workItem from="1584894730000" duration="6241000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1172" y="361" width="526" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584198535346">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state x="1172" y="361" width="526" height="396" key="#com.intellij.fileTypes.FileTypeChooser/0.32.1920.1048@0.32.1920.1048" timestamp="1584198535346" />
+    <state width="918" height="288" key="GridCell.Tab.0.bottom" timestamp="1584992289373">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state width="918" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1584992289373" />
+    <state width="1358" height="275" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
+    <state width="918" height="288" key="GridCell.Tab.0.center" timestamp="1584992289372">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state width="918" height="288" key="GridCell.Tab.0.center/0.0.1920.1038@0.0.1920.1038" timestamp="1584992289372" />
+    <state width="1358" height="275" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
+    <state width="918" height="288" key="GridCell.Tab.0.left" timestamp="1584992289371">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state width="918" height="288" key="GridCell.Tab.0.left/0.0.1920.1038@0.0.1920.1038" timestamp="1584992289371" />
+    <state width="1358" height="275" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852730" />
+    <state width="918" height="288" key="GridCell.Tab.0.right" timestamp="1584992289372">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state width="918" height="288" key="GridCell.Tab.0.right/0.0.1920.1038@0.0.1920.1038" timestamp="1584992289372" />
+    <state width="1358" height="275" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
+    <state x="0" y="153" width="992" height="737" key="SettingsEditor" timestamp="1584898139606">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="0" y="153" width="992" height="737" key="SettingsEditor/0.0.1920.1038@0.0.1920.1038" timestamp="1584898139606" />
+    <state x="639" y="348" key="com.intellij.ide.util.TipDialog" timestamp="1584894730935">
+      <screen x="0" y="0" width="1920" height="1038" />
+    </state>
+    <state x="639" y="348" key="com.intellij.ide.util.TipDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1584894730935" />
+    <state x="639" y="383" key="com.intellij.ide.util.TipDialog/0.32.1920.1048@0.32.1920.1048" timestamp="1584281923525" />
+    <state x="1104" y="247" width="662" height="623" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584282629269">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state x="1104" y="247" width="662" height="623" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.32.1920.1048@0.32.1920.1048" timestamp="1584282629269" />
+  </component>
+</project>
