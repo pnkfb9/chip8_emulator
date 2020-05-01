@@ -3,6 +3,7 @@
 
 CMakeFiles/untitled.dir/chip8_core.c.o: ../chip8_core.c
 CMakeFiles/untitled.dir/chip8_core.c.o: ../chip8_core.h
+CMakeFiles/untitled.dir/chip8_core.c.o: ../graphics.h
 
 CMakeFiles/untitled.dir/graphics.c.o: ../graphics.c
 CMakeFiles/untitled.dir/graphics.c.o: ../graphics.h

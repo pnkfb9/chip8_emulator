@@ -7,7 +7,16 @@ int main() {
     graphics_init();
     chip8_init();
 
+    while(1)
+    {
+        chip8_emulate_cycle();
+        if(chip8_is_draw_flag_set())
+        {
+            graphics_draw();
+            chip8_draw_flag_reset();
+        }
 
+    }
 
     return 0;
 }

@@ -20,6 +20,7 @@ graphics_init(void)
     int res = 0;
     printf("Initializing graphics...\n\r");
     res |= SDL_Init(SDL_INIT_VIDEO);
+    memset(gfx,0x0U,sizeof(gfx));
     pixel.x = 0;
     pixel.y = 0;
     pixel.h = PIXEL_H;
@@ -32,7 +33,7 @@ graphics_init(void)
             screenSurface = SDL_GetWindowSurface(window);
             SDL_FillRect(screenSurface,NULL,PIXEL_BLACK);
             SDL_UpdateWindowSurface(window);
-            SDL_Delay(2000);
+
        } else
        {
            res = 1;
@@ -59,20 +60,28 @@ graphics_init(void)
  *  2) 0x00E0 -> clear screen (set black)
  * \return o if
  */
-int graphics_draw(void)
+void graphics_draw(void)
 {
     uint32_t color = PIXEL_BLACK;
-        for(int r = 0;r<SCREEN_WIDTH;r++)
-        {
-            for(int col = 0;col<SCREEN_HEIGHT;col++)
-            {
+        for (int r = 0; r < SCREEN_WIDTH; r++) {
+            for (int col = 0; col < SCREEN_HEIGHT; col++) {
                 pixel.x = r * 10;
                 pixel.y = col * 10;
-                (gfx[r][col] == 1) ?  (color = PIXEL_WHITE) : (color = PIXEL_BLACK);
-                SDL_FillRect(screenSurface,&pixel,color);
+                if(gfx[col][r] == 1)
+                {
+                    color = PIXEL_WHITE;
+                }
+                else
+                {
+                    color = PIXEL_BLACK;
+                }
+                SDL_FillRect(screenSurface, &pixel, color);
+                SDL_UpdateWindowSurface(window);
             }
         }
-    SDL_UpdateWindowSurface(window);
+
+
+
 }
 
 void

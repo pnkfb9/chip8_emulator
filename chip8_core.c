@@ -4,7 +4,6 @@
 
 #include "graphics.h"
 #include "chip8_core.h"
-#include <stdint.h>
 #include <string.h>
 #include <bits/types/FILE.h>
 #include <stdio.h>
@@ -159,6 +158,7 @@ void chip8_init(void)
     {
          memory[i + FONTSET_START_ADDR] = chip8_fontset[i];
     }
+    chip8_load_rom();
 }
 
 int
@@ -167,7 +167,7 @@ chip8_load_rom(void)
     FILE *file;
     long lSize;
     int retval = -1;
-    file = fopen("./roms/PONG.c8","rb");
+    file = fopen("./roms/PONG","rb");
     if(file)
     {
         fseek(file,0,SEEK_END);
@@ -194,8 +194,6 @@ chip8_emulate_cycle(void)
     chip8_decode(&opcode);
 
     //execute
-
-
 
     //update timers
 
@@ -400,19 +398,35 @@ chip8_decode(const uint16_t *opc)
             case 0xD000U:
             {
                 ///< draw sprite
-                uint8_t x,y,lines;
+                uint8_t x,y,lines, line,x_set,y_set;
                 x = (*opc & 0x0F00U) >> 8U;
                 y = (*opc & 0x00F0U) >> 4U;
                 lines = (*opc & 0x000FU);
 
-                for(int r = 0; r < lines; r++)
-                {
-                    for(int c = 0; c < 8U;c++)
+                for(int r = 0; r < lines; r++) //rows
+                {   line = memory[I + r];
+                    for(int c = 0; c < 8U;c++) // columns
                     {
-                        if()
+                        if((line & (0x80U >> c)) != 0)
+                        {
+                            x_set = x + r;
+                            y_set = y + c;
+                            if( (y + c) >(SCREEN_WIDTH - 1))
+                            {
+                                y_set = (x + c) - SCREEN_WIDTH;
+                            }
+                            if( (x + r) > (SCREEN_HEIGHT - 1))
+                            {
+                                x_set = (y + r) - SCREEN_HEIGHT;
+                            }
+                            if(gfx[x_set][y_set] == 1) V[0xF] = 1U;
+
+                            gfx[x_set][y_set] ^= 1U;
+                        }
                     }
                 }
-
+                pc+=2;
+                draw_flag  =1U;
             }
             break;
             case 0xE000U:
@@ -501,5 +515,16 @@ chip8_decode(const uint16_t *opc)
 
         }
     }
+
+}
+
+uint8_t chip8_is_draw_flag_set(void)
+{
+    return draw_flag;
+}
+
+void chip8_draw_flag_reset(void)
+{
+    draw_flag = 0;
 
 }

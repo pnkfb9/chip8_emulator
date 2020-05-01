@@ -22,7 +22,7 @@
 #define PIXEL_W         10U
 #define PIXEL_H         10U
 
-uint8_t gfx[SCREEN_HEIGHT][SCREEN_WIDTH] = {0};
+uint8_t gfx[SCREEN_HEIGHT][SCREEN_WIDTH];
 
 /*
  * \brief The initialization function.
@@ -35,5 +35,5 @@ int graphics_init(void);
  */
 void graphics_clear(void);
 
-uint8_t** graphics_get_gfx(void);
+void graphics_draw(void);
 #endif //CHIP_8_GRAPHICS_H
