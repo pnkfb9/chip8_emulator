@@ -2,6 +2,7 @@
 // Created by panc on 14/03/20.
 //
 
+#include "graphics.h"
 #include "chip8_core.h"
 #include <stdint.h>
 #include <string.h>
@@ -12,7 +13,7 @@
 /*
  *  system memory map:
  *
- *  0x0-1-0x1FF -> interpreter
+ *  0x000-0x1FF -> interpreter
  *  0x04F-0x0A0 -> built-in font set (0-F)
  *  0x1FF-0xFFF -> program ROM and work RAM
  */
@@ -20,15 +21,17 @@
 #define FONTSET_END_ADDR    (0x0A0U)
 #define FONTSET_SIZE    (FONTSET_END_ADDR - FONTSET_START_ADDR)
 #define ROM_OFFSET          (0x200U)
+
+static uint8_t  draw_flag = 0;
 static uint16_t opcode;
 static uint8_t memory[4096];
-static uint8_t V[16]; // 16 registers, where last register carry the flag
+static uint8_t V[16];                                                   ///< 16 registers, where last register carry the flag
 
-static uint16_t I;      //index register
-static uint16_t pc;     //program counter
+static uint16_t I;                                                      ///< Index register
+static uint16_t pc;                                                     ///< Program counter
 
-static uint16_t stack[16];      //16 levels os stack max
-static uint16_t sp;             //stack pointer
+static uint16_t stack[16];                                              ///< 16 levels os stack max
+static uint16_t sp;                                                     ///< Stack Pointer
 
 static uint8_t delay_timer;
 static uint8_t sound_timer;
@@ -185,7 +188,7 @@ void
 chip8_emulate_cycle(void)
 {
     //fetch
-    opcode = (memory[pc] << 8) | memory[pc + 1];
+    opcode = (memory[pc] << 8U) | memory[pc + 1];
 
     //decode
     chip8_decode(&opcode);
@@ -214,7 +217,9 @@ chip8_decode(const uint16_t *opc)
 
                     case 0x0000U: //CLS
                     {
-
+                        graphics_clear();
+                        draw_flag = 1;
+                        pc+=2;
                     }
                     break;
                     case 0x000EU:   //RET
@@ -394,6 +399,19 @@ chip8_decode(const uint16_t *opc)
             break;
             case 0xD000U:
             {
+                ///< draw sprite
+                uint8_t x,y,lines;
+                x = (*opc & 0x0F00U) >> 8U;
+                y = (*opc & 0x00F0U) >> 4U;
+                lines = (*opc & 0x000FU);
+
+                for(int r = 0; r < lines; r++)
+                {
+                    for(int c = 0; c < 8U;c++)
+                    {
+                        if()
+                    }
+                }
 
             }
             break;
