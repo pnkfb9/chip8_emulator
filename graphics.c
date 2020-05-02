@@ -63,11 +63,11 @@ graphics_init(void)
 void graphics_draw(void)
 {
     uint32_t color = PIXEL_BLACK;
-        for (int r = 0; r < SCREEN_WIDTH; r++) {
-            for (int col = 0; col < SCREEN_HEIGHT; col++) {
-                pixel.x = r * 10;
-                pixel.y = col * 10;
-                if(gfx[col][r] == 1)
+        for (int y_g = 0; y_g < SCREEN_HEIGHT; y_g++) {
+            for (int x_g = 0; x_g < SCREEN_WIDTH; x_g++) {
+                pixel.x = x_g * 10;
+                pixel.y = y_g * 10;
+                if(gfx[y_g][x_g] == 1)
                 {
                     color = PIXEL_WHITE;
                 }
@@ -75,9 +75,11 @@ void graphics_draw(void)
                 {
                     color = PIXEL_BLACK;
                 }
+               // printf("%d ",gfx[y_g][x_g]);
                 SDL_FillRect(screenSurface, &pixel, color);
                 SDL_UpdateWindowSurface(window);
             }
+            //printf("\n");
         }
 
 

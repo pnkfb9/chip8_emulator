@@ -12,87 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6527dd6e-e99a-4171-8fe8-99bd1c624a17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/panc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/untitled.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chip8_core.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chip8_core.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/C.includecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/DependInfo.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/build.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/chip8_core.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/cmake_clean.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/depend.internal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/depend.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/flags.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/graphics.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/link.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/main.c.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/progress.make" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphics.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphics.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/15PUZZLE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/BLINKY" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/BLITZ" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/BREAKOUT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/BRIX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/CONNECT4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/GUESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/HIDDEN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/HIDDEN.DOC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/INVADERS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/KALEID" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/MAZE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/MERLIN" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/MISSILE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/PONG" beforeDir="false" afterPath="$PROJECT_DIR$/PONG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/PONG2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/PUZZLE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/15PUZZLE.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/BLINKY.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/BREAKOUT.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/BRIX.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/MAZE.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/PONG.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/PONG2.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/SYZYGY.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/UFO.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SOURCES/VBRIX.SRC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SQUASH" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/SYZYGY" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/TANK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/TETRIS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/TICTAC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/UFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/VBRIX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/VERS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/WALL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/roms/WIPEOFF" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/roms/c8_test.c8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/roms/test_opcode.ch8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chip8_core.c" beforeDir="false" afterPath="$PROJECT_DIR$/chip8_core.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/chip8_core.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/chip8_core.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/graphics.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/graphics.c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/untitled" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/graphics.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,17 +44,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/roms" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="debugger.dataViews" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/roms" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/roms" />
     </key>
   </component>
   <component name="RunManager">
@@ -153,7 +80,8 @@
       <workItem from="1584894730000" duration="6241000" />
       <workItem from="1588173687799" duration="747000" />
       <workItem from="1588319029676" duration="3062000" />
-      <workItem from="1588329366504" duration="14661000" />
+      <workItem from="1588329366504" duration="14786000" />
+      <workItem from="1588405363010" duration="15290000" />
     </task>
     <servers />
   </component>
@@ -162,15 +90,15 @@
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="418" y="176" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1038@0.0.1920.1038" timestamp="1588361838748" />
-    <state x="1172" y="326" width="526" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588360936636">
+    <state x="1172" y="326" width="554" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588430859606">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state x="1172" y="326" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1038@0.0.1920.1038" timestamp="1588360936636" />
+    <state x="1172" y="326" width="554" height="396" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1038@0.0.1920.1038" timestamp="1588430859606" />
     <state x="1172" y="361" width="526" height="396" key="#com.intellij.fileTypes.FileTypeChooser/0.32.1920.1048@0.32.1920.1048" timestamp="1584198535346" />
-    <state width="431" height="485" key="DebuggerActiveHint" timestamp="1588363649963">
+    <state width="431" height="485" key="DebuggerActiveHint" timestamp="1588431187156">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="431" height="485" key="DebuggerActiveHint/0.0.1920.1038@0.0.1920.1038" timestamp="1588363649963" />
+    <state width="431" height="485" key="DebuggerActiveHint/0.0.1920.1038@0.0.1920.1038" timestamp="1588431187156" />
     <state x="717" y="204" width="476" height="635" key="ExperimentsDialog" timestamp="1588363040530">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
@@ -179,42 +107,42 @@
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="743" y="276" width="424" height="491" key="FileChooserDialogImpl/0.0.1920.1038@0.0.1920.1038" timestamp="1588361835695" />
-    <state width="1878" height="336" key="GridCell.Tab.0.bottom" timestamp="1588363988865">
+    <state width="1878" height="505" key="GridCell.Tab.0.bottom" timestamp="1588434379261">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.0.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1588363988865" />
+    <state width="1878" height="505" key="GridCell.Tab.0.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1588434379261" />
     <state width="1358" height="275" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
-    <state width="1878" height="336" key="GridCell.Tab.0.center" timestamp="1588363988864">
+    <state width="1878" height="505" key="GridCell.Tab.0.center" timestamp="1588434379259">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.0.center/0.0.1920.1038@0.0.1920.1038" timestamp="1588363988864" />
+    <state width="1878" height="505" key="GridCell.Tab.0.center/0.0.1920.1038@0.0.1920.1038" timestamp="1588434379259" />
     <state width="1358" height="275" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
-    <state width="1878" height="336" key="GridCell.Tab.0.left" timestamp="1588363988864">
+    <state width="1878" height="505" key="GridCell.Tab.0.left" timestamp="1588434379258">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.0.left/0.0.1920.1038@0.0.1920.1038" timestamp="1588363988864" />
+    <state width="1878" height="505" key="GridCell.Tab.0.left/0.0.1920.1038@0.0.1920.1038" timestamp="1588434379258" />
     <state width="1358" height="275" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852730" />
-    <state width="1878" height="336" key="GridCell.Tab.0.right" timestamp="1588363988864">
+    <state width="1878" height="505" key="GridCell.Tab.0.right" timestamp="1588434379260">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.0.right/0.0.1920.1038@0.0.1920.1038" timestamp="1588363988864" />
+    <state width="1878" height="505" key="GridCell.Tab.0.right/0.0.1920.1038@0.0.1920.1038" timestamp="1588434379260" />
     <state width="1358" height="275" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
-    <state width="1878" height="336" key="GridCell.Tab.1.bottom" timestamp="1588363989555">
+    <state width="1878" height="505" key="GridCell.Tab.1.bottom" timestamp="1588434382990">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1588363989555" />
-    <state width="1878" height="336" key="GridCell.Tab.1.center" timestamp="1588363989554">
+    <state width="1878" height="505" key="GridCell.Tab.1.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1588434382990" />
+    <state width="1878" height="505" key="GridCell.Tab.1.center" timestamp="1588434382990">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.center/0.0.1920.1038@0.0.1920.1038" timestamp="1588363989554" />
-    <state width="1878" height="336" key="GridCell.Tab.1.left" timestamp="1588363989553">
+    <state width="1878" height="505" key="GridCell.Tab.1.center/0.0.1920.1038@0.0.1920.1038" timestamp="1588434382990" />
+    <state width="1878" height="505" key="GridCell.Tab.1.left" timestamp="1588434382990">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.left/0.0.1920.1038@0.0.1920.1038" timestamp="1588363989553" />
-    <state width="1878" height="336" key="GridCell.Tab.1.right" timestamp="1588363989555">
+    <state width="1878" height="505" key="GridCell.Tab.1.left/0.0.1920.1038@0.0.1920.1038" timestamp="1588434382990" />
+    <state width="1878" height="505" key="GridCell.Tab.1.right" timestamp="1588434382990">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="336" key="GridCell.Tab.1.right/0.0.1920.1038@0.0.1920.1038" timestamp="1588363989555" />
+    <state width="1878" height="505" key="GridCell.Tab.1.right/0.0.1920.1038@0.0.1920.1038" timestamp="1588434382990" />
     <state x="0" y="153" width="992" height="737" key="SettingsEditor" timestamp="1588363055271">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
@@ -238,6 +166,35 @@
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1038@0.0.1920.1038" timestamp="1588363030488" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/chip8_core.c</url>
+          <line>425</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/chip8_core.c</url>
+          <line>267</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/chip8_core.c</url>
+          <line>201</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/chip8_core.c</url>
+          <line>297</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/chip8_core.c</url>
+          <line>279</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="memory" />
@@ -245,6 +202,7 @@
         <watch expression="V" />
         <watch expression="pc" />
         <watch expression="gfx[col]" />
+        <watch expression="y" />
       </configuration>
     </watches-manager>
   </component>

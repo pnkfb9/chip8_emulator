@@ -18,6 +18,7 @@
  */
 #define FONTSET_START_ADDR  (0x050U)
 #define FONTSET_END_ADDR    (0x0A0U)
+#define FONT_SIZE           (5U)
 #define FONTSET_SIZE    (FONTSET_END_ADDR - FONTSET_START_ADDR)
 #define ROM_OFFSET          (0x200U)
 
@@ -32,8 +33,12 @@ static uint16_t pc;                                                     ///< Pro
 static uint16_t stack[16];                                              ///< 16 levels os stack max
 static uint16_t sp;                                                     ///< Stack Pointer
 
-static uint8_t delay_timer;
-static uint8_t sound_timer;
+static uint8_t delay_timer;                                             ///< Counter used to emulate the delay timer
+static uint8_t sound_timer;                                             ///< Counter used to emulate the sound timer
+static time_t t;
+
+static uint8_t keys[16] = {0};                                          ///< byte array to store the different keys state(pressed or released)
+static int cycle = 0;
 
 static uint8_t chip8_fontset[80] =
         {
@@ -55,7 +60,7 @@ static uint8_t chip8_fontset[80] =
                 0xF0, 0x80, 0xF0, 0x80, 0x80  // F
         };
 
-static time_t t;
+
 typedef enum
 {
     CLS = 0,
@@ -136,6 +141,8 @@ static uint16_t instr_set[35] = {
 };
 
 static void chip8_decode(const uint16_t *opc);
+static void chip8_handle_keyboard(void);
+static void chip8_print_status(void);
 
 void chip8_init(void)
 {
@@ -144,8 +151,6 @@ void chip8_init(void)
     I = 0x00U;
     sp = 0x00U;
     srand((unsigned) time(&t));
-    //gfx clear graphics
-
     //clear regs, stack and memory
     for(uint8_t i = 0; i < 16;i++)
     {
@@ -167,7 +172,7 @@ chip8_load_rom(void)
     FILE *file;
     long lSize;
     int retval = -1;
-    file = fopen("./roms/PONG","rb");
+    file = fopen("./roms/c8_test.c8","rb");
     if(file)
     {
         fseek(file,0,SEEK_END);
@@ -178,10 +183,13 @@ chip8_load_rom(void)
         for(int pos = 0;pos<lSize;pos++)
         {
             res = fread(&byte,1,1,file);
+            printf(" %X at %X\n",byte,pos+ROM_OFFSET);
             if(res)memory[pos+ROM_OFFSET] = byte;
         }
         retval = 0;
     }
+
+    for(int i =0;i<lSize;i++)printf("memory[%X] = %X\n",ROM_OFFSET+i,memory[ROM_OFFSET+i]);
     return retval;
 }
 void
@@ -194,10 +202,10 @@ chip8_emulate_cycle(void)
     chip8_decode(&opcode);
 
     //execute
-
+    chip8_handle_keyboard();
     //update timers
-
-
+    chip8_print_status();
+    cycle++;
 }
 
 void
@@ -247,6 +255,10 @@ chip8_decode(const uint16_t *opc)
             {
                 if(V[((*opc & 0x0F00U) >> 8U)] == (*opc & 0x00FFU))
                 {
+                    pc+=4;
+                }
+                else
+                {
                     pc+=2;
                 }
             }
@@ -255,6 +267,10 @@ chip8_decode(const uint16_t *opc)
             {
                if(V[((*opc & 0x0F00U) >> 8U)] != (*opc & 0x00FFU))
                {
+                   pc+=4;
+               }
+               else
+               {
                    pc+=2;
                }
             }
@@ -262,6 +278,10 @@ chip8_decode(const uint16_t *opc)
             case 0x5000U:
             {
                 if(V[((*opc & 0x0F00U)>>8U)] == V[((*opc & 0x00F0U) >> 4U)])
+                {
+                    pc+=4;
+                }
+                else
                 {
                     pc+=2;
                 }
@@ -403,30 +423,30 @@ chip8_decode(const uint16_t *opc)
                 y = (*opc & 0x00F0U) >> 4U;
                 lines = (*opc & 0x000FU);
 
-                for(int r = 0; r < lines; r++) //rows
-                {   line = memory[I + r];
-                    for(int c = 0; c < 8U;c++) // columns
+                for(int y_l = 0; y_l < lines; y_l++) //rows
+                {   line = memory[I + y_l];
+                    for(int x_l = 0; x_l < 8U;x_l++) // columns
                     {
-                        if((line & (0x80U >> c)) != 0)
+                        if((line & (0x80U >> x_l)) != 0)
                         {
-                            x_set = x + r;
-                            y_set = y + c;
-                            if( (y + c) >(SCREEN_WIDTH - 1))
+                            x_set = x + x_l;
+                            y_set = y + y_l;
+                            if( x_set >(SCREEN_WIDTH - 1))
                             {
-                                y_set = (x + c) - SCREEN_WIDTH;
+                                x_set -= SCREEN_WIDTH;
                             }
-                            if( (x + r) > (SCREEN_HEIGHT - 1))
+                            if( y_set > (SCREEN_HEIGHT - 1))
                             {
-                                x_set = (y + r) - SCREEN_HEIGHT;
+                                y_set -=SCREEN_HEIGHT;
                             }
-                            if(gfx[x_set][y_set] == 1) V[0xF] = 1U;
+                            if(gfx[y_set][x_set] == 1) V[0xF] = 1U;
 
-                            gfx[x_set][y_set] ^= 1U;
+                            gfx[y_set][x_set] ^= 1U;
                         }
                     }
                 }
                 pc+=2;
-                draw_flag  =1U;
+                draw_flag  = 1U;
             }
             break;
             case 0xE000U:
@@ -435,12 +455,24 @@ chip8_decode(const uint16_t *opc)
                 {
                     case 0x009EU:
                     {
-
+                        if(keys[V[(*opc & 0x0F00U)>>8U]] == 1U)
+                        {
+                            pc+=4;
+                        } else
+                        {
+                            pc+=2;
+                        }
                     }
                     break;
                     case 0x00A1U:
                     {
-
+                        if(keys[V[(*opc & 0x0F00U)>>8U]] == 0U)
+                        {
+                            pc+=4;
+                        } else
+                        {
+                            pc+=2;
+                        }
                     }
                     break;
                     default:
@@ -483,12 +515,20 @@ chip8_decode(const uint16_t *opc)
                     break;
                     case 0x0029U:
                     {
-
+                            uint16_t location = FONTSET_START_ADDR;
+                            location += (FONT_SIZE * V[(*opc & 0x0F00U)>>8U]);
+                            printf("location: %X\n",location);
+                            I = location;
+                            pc+=2;
                     }
                     break;
                     case 0x0033U:
                     {
-
+                            uint16_t value = V[(*opc & 0x0F00U)>>8U];
+                            memory[I] = (value/100)%10;
+                            memory[I + 1] = (value/10)%10;
+                            memory[I + 2] = value%10;
+                            pc+=2;
                     }
                     break;
                     case 0x0055U:
@@ -527,4 +567,204 @@ void chip8_draw_flag_reset(void)
 {
     draw_flag = 0;
 
+}
+
+void chip8_handle_keyboard(void)
+{
+    SDL_Event event;
+
+    while(SDL_PollEvent(&event))
+    {
+        if(event.type == SDL_KEYDOWN)
+        {
+            switch(event.key.keysym.sym)
+            {
+                case SDLK_3:
+                {
+                    keys[0] = 1U;
+                }
+                break;
+                case SDLK_4:
+                {
+                    keys[1] = 1U;
+                }
+                break;
+                case SDLK_5:
+                {
+                    keys[2] = 1U;
+                }
+                break;
+                case SDLK_6:
+                {
+                    keys[3] = 1U;
+                }
+                break;
+                case SDLK_e:
+                {
+                    keys[4] = 1U;
+                }
+                break;
+                case SDLK_r:
+                {
+                    keys[5] = 1U;
+                }
+                break;
+                case SDLK_t:
+                {
+                    keys[6] = 1U;
+                }
+                break;
+                case SDLK_y:
+                {
+                    keys[7] = 1U;
+                }
+                break;
+                case SDLK_f:
+                {
+                    keys[8] = 1U;
+                }
+                break;
+                case SDLK_g:
+                {
+                    keys[9] = 1U;
+                }
+                break;
+                case SDLK_h:
+                {
+                    keys[10] = 1U;
+                }
+                break;
+                case SDLK_j:
+                {
+                    keys[11] = 1U;
+                }
+                break;
+                case SDLK_v:
+                {
+                    keys[12] = 1U;
+                }
+                break;
+                case SDLK_b:
+                {
+                    keys[13] = 1U;
+                }
+                break;
+                case SDLK_n:
+                {
+                    keys[14] = 1U;
+                }
+                break;
+                case SDLK_m:
+                {
+                    keys[15] = 1U;
+                }
+                break;
+                default:
+                    break;
+            }
+        }
+        if(event.type == SDL_KEYUP)
+        {
+            switch(event.key.keysym.sym)
+            {
+                case SDLK_3:
+                {
+                    keys[0] = 0U;
+                }
+                    break;
+                case SDLK_4:
+                {
+                    keys[1] = 0U;
+                }
+                    break;
+                case SDLK_5:
+                {
+                    keys[2] = 0U;
+                }
+                    break;
+                case SDLK_6:
+                {
+                    keys[3] = 0U;
+                }
+                    break;
+                case SDLK_e:
+                {
+                    keys[4] = 0U;
+                }
+                    break;
+                case SDLK_r:
+                {
+                    keys[5] = 0U;
+                }
+                    break;
+                case SDLK_t:
+                {
+                    keys[6] = 0U;
+                }
+                    break;
+                case SDLK_y:
+                {
+                    keys[7] = 0U;
+                }
+                    break;
+                case SDLK_f:
+                {
+                    keys[8] = 0U;
+                }
+                    break;
+                case SDLK_g:
+                {
+                    keys[9] = 0U;
+                }
+                    break;
+                case SDLK_h:
+                {
+                    keys[10] = 0U;
+                }
+                    break;
+                case SDLK_j:
+                {
+                    keys[11] = 0U;
+                }
+                    break;
+                case SDLK_v:
+                {
+                    keys[12] = 0U;
+                }
+                    break;
+                case SDLK_b:
+                {
+                    keys[13] = 0U;
+                }
+                    break;
+                case SDLK_n:
+                {
+                    keys[14] = 0U;
+                }
+                    break;
+                case SDLK_m:
+                {
+                    keys[15] = 0U;
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+}
+
+void
+chip8_print_status(void)
+{
+    printf("\n***\ncycle %d\n", cycle);
+    printf("PC: %d\n",pc);
+    printf("opcode: %X\n",opcode);
+
+    /*for(int i = 0;i<16;i++)
+    {
+        printf("V[%d] = %X\n",i,V[i]);
+    }*/
+    printf("***\n");
 }
