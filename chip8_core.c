@@ -146,11 +146,12 @@ static void chip8_print_status(void);
 
 void chip8_init(void)
 {
+    srand(time(NULL));
     pc = 0x200U;
     opcode = 0x0U;
     I = 0x00U;
     sp = 0x00U;
-    srand((unsigned) time(&t));
+
     //clear regs, stack and memory
     for(uint8_t i = 0; i < 16;i++)
     {
@@ -172,7 +173,7 @@ chip8_load_rom(void)
     FILE *file;
     long lSize;
     int retval = -1;
-    file = fopen("./roms/c8_test.c8","rb");
+    file = fopen("./roms/INVADERS","rb");
     if(file)
     {
         fseek(file,0,SEEK_END);
@@ -183,13 +184,13 @@ chip8_load_rom(void)
         for(int pos = 0;pos<lSize;pos++)
         {
             res = fread(&byte,1,1,file);
-            printf(" %X at %X\n",byte,pos+ROM_OFFSET);
+            //printf(" %X at %X\n",byte,pos+ROM_OFFSET);
             if(res)memory[pos+ROM_OFFSET] = byte;
         }
         retval = 0;
     }
 
-    for(int i =0;i<lSize;i++)printf("memory[%X] = %X\n",ROM_OFFSET+i,memory[ROM_OFFSET+i]);
+    //for(int i =0;i<lSize;i++)printf("memory[%X] = %X\n",ROM_OFFSET+i,memory[ROM_OFFSET+i]);
     return retval;
 }
 void
@@ -202,9 +203,11 @@ chip8_emulate_cycle(void)
     chip8_decode(&opcode);
 
     //execute
-    chip8_handle_keyboard();
+    //chip8_handle_keyboard();
     //update timers
-    chip8_print_status();
+    //chip8_print_status();
+    if(delay_timer)delay_timer--;
+    if(sound_timer)sound_timer--;
     cycle++;
 }
 
@@ -409,7 +412,7 @@ chip8_decode(const uint16_t *opc)
             break;
             case 0xC000U:
             {
-                srand((unsigned)time(&t));
+                //srand((unsigned)time(&t));
                 uint8_t random = rand() % 256;
                 V[((*opc & 0x0F00U)>>8U)] = random & (*opc & 0x00FFU);
                 pc+=2;
@@ -419,8 +422,8 @@ chip8_decode(const uint16_t *opc)
             {
                 ///< draw sprite
                 uint8_t x,y,lines, line,x_set,y_set;
-                x = (*opc & 0x0F00U) >> 8U;
-                y = (*opc & 0x00F0U) >> 4U;
+                x = V[(*opc & 0x0F00U) >> 8U];
+                y = V[(*opc & 0x00F0U) >> 4U];
                 lines = (*opc & 0x000FU);
 
                 for(int y_l = 0; y_l < lines; y_l++) //rows
@@ -517,7 +520,7 @@ chip8_decode(const uint16_t *opc)
                     {
                             uint16_t location = FONTSET_START_ADDR;
                             location += (FONT_SIZE * V[(*opc & 0x0F00U)>>8U]);
-                            printf("location: %X\n",location);
+                            //printf("location: %X\n",location);
                             I = location;
                             pc+=2;
                     }

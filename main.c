@@ -10,6 +10,7 @@ int main() {
     while(1)
     {
         chip8_emulate_cycle();
+        //graphics_draw();
         if(chip8_is_draw_flag_set())
         {
             graphics_draw();
