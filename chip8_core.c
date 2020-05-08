@@ -422,9 +422,11 @@ chip8_decode(const uint16_t *opc)
             {
                 ///< draw sprite
                 uint8_t x,y,lines, line,x_set,y_set;
-                x = V[(*opc & 0x0F00U) >> 8U];
-                y = V[(*opc & 0x00F0U) >> 4U];
+                x = V[(*opc & 0x0F00U) >> 8U] & 0x3FU;
+                y = V[(*opc & 0x00F0U) >> 4U] & 0x1FU;
                 lines = (*opc & 0x000FU);
+
+                V[0xFU] = 0;
 
                 for(int y_l = 0; y_l < lines; y_l++) //rows
                 {   line = memory[I + y_l];
@@ -434,15 +436,11 @@ chip8_decode(const uint16_t *opc)
                         {
                             x_set = x + x_l;
                             y_set = y + y_l;
-                            if( x_set >(SCREEN_WIDTH - 1))
+                            if( x_set >(SCREEN_WIDTH - 1)) or ( y_set > (SCREEN_HEIGHT - 1))
                             {
-                                x_set -= SCREEN_WIDTH;
+                                break;
                             }
-                            if( y_set > (SCREEN_HEIGHT - 1))
-                            {
-                                y_set -=SCREEN_HEIGHT;
-                            }
-                            if(gfx[y_set][x_set] == 1) V[0xF] = 1U;
+                            if(gfx[y_set][x_set] == 1) V[0xFU] = 1U;
 
                             gfx[y_set][x_set] ^= 1U;
                         }
