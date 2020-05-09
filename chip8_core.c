@@ -22,7 +22,8 @@
 #define FONTSET_SIZE    (FONTSET_END_ADDR - FONTSET_START_ADDR)
 #define ROM_OFFSET          (0x200U)
 
-static uint8_t  draw_flag = 0;
+static uint8_t chip8_quit = 0U;
+static uint8_t  draw_flag = 0U;
 static uint16_t opcode;
 static uint8_t memory[4096];
 static uint8_t V[16];                                                   ///< 16 registers, where last register carry the flag
@@ -151,7 +152,8 @@ void chip8_init(void)
     opcode = 0x0U;
     I = 0x00U;
     sp = 0x00U;
-
+    chip8_quit = 0U;
+    draw_flag = 0U;
     //clear regs, stack and memory
     for(uint8_t i = 0; i < 16;i++)
     {
@@ -174,7 +176,7 @@ chip8_load_rom(void)
     long lSize;
     int retval = -1;
     file = fopen("./roms/INVADERS","rb");
-endif //UNTITLED_GRAPHICS_H
+
     if(file)
     {
         fseek(file,0,SEEK_END);
@@ -204,7 +206,7 @@ chip8_emulate_cycle(void)
     chip8_decode(&opcode);
 
     //execute
-    //chip8_handle_keyboard();
+    chip8_handle_keyboard();
     //update timers
     //chip8_print_status();
     if(delay_timer)delay_timer--;
@@ -239,6 +241,7 @@ chip8_decode(const uint16_t *opc)
                     }
                     break;
                     default:
+                        pc+=2;
                         break;
                 }
             }
@@ -437,7 +440,7 @@ chip8_decode(const uint16_t *opc)
                         {
                             x_set = x + x_l;
                             y_set = y + y_l;
-                            if( x_set >(SCREEN_WIDTH - 1)) or ( y_set > (SCREEN_HEIGHT - 1))
+                            if( (x_set >(SCREEN_WIDTH - 1)) || ( y_set > (SCREEN_HEIGHT - 1)))
                             {
                                 break;
                             }
@@ -494,7 +497,7 @@ chip8_decode(const uint16_t *opc)
                     break;
                     case 0x000AU:
                     {
-
+                            // wait for a keypress
                     }
                     break;
                     case 0x0015U:
@@ -511,7 +514,17 @@ chip8_decode(const uint16_t *opc)
                     break;
                     case 0x001EU:
                     {
+                        uint32_t tmp = I + V[((*opc &0x0F00U)>>8U)];
+
+                        if(tmp > 0xFFFFU)
+                        {
+                            V[0xFU]  = 1U;
+                        } else
+                        {
+                            V[0xFU] = 0U;
+                        }
                             I = I + V[((*opc &0x0F00U)>>8U)];
+
                             pc+=2;
                     }
                     break;
@@ -519,7 +532,6 @@ chip8_decode(const uint16_t *opc)
                     {
                             uint16_t location = FONTSET_START_ADDR;
                             location += (FONT_SIZE * V[(*opc & 0x0F00U)>>8U]);
-                            //printf("location: %X\n",location);
                             I = location;
                             pc+=2;
                     }
@@ -535,7 +547,8 @@ chip8_decode(const uint16_t *opc)
                     break;
                     case 0x0055U:
                     {
-                        for(uint8_t i = 0;i <= ((*opc & 0x0F00U)>>8U);i++)
+                        uint8_t tmp = ((*opc & 0x0F00U)>>8U);
+                        for(uint8_t i = 0;i <= tmp;i++)
                         {
                             memory[I+i] = V[i];
                         }
@@ -577,6 +590,7 @@ void chip8_handle_keyboard(void)
 
     while(SDL_PollEvent(&event))
     {
+        if(event.type == SDL_QUIT) chip8_quit = 1U;
         if(event.type == SDL_KEYDOWN)
         {
             switch(event.key.keysym.sym)
@@ -658,6 +672,7 @@ void chip8_handle_keyboard(void)
                 break;
                 case SDLK_m:
                 {
+                    printf("m\n");
                     keys[15] = 1U;
                 }
                 break;
@@ -769,4 +784,9 @@ chip8_print_status(void)
         printf("V[%d] = %X\n",i,V[i]);
     }*/
     printf("***\n");
+}
+
+uint8_t chip8_terminate(void)
+{
+    return chip8_quit;
 }

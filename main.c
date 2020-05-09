@@ -7,7 +7,7 @@ int main() {
     graphics_init();
     chip8_init();
 
-    while(1)
+    while(!chip8_terminate())
     {
         chip8_emulate_cycle();
         //graphics_draw();

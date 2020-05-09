@@ -25,6 +25,7 @@ graphics_init(void)
     pixel.y = 0;
     pixel.h = PIXEL_H;
     pixel.w = PIXEL_W;
+
     if(!res)
     {
        window = SDL_CreateWindow("CHIP-8",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,SCREEN_WIDTH * 10,SCREEN_HEIGHT*10,SDL_WINDOW_SHOWN);
