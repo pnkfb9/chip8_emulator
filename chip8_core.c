@@ -174,6 +174,7 @@ chip8_load_rom(void)
     long lSize;
     int retval = -1;
     file = fopen("./roms/INVADERS","rb");
+endif //UNTITLED_GRAPHICS_H
     if(file)
     {
         fseek(file,0,SEEK_END);
