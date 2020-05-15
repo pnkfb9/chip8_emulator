@@ -224,24 +224,32 @@ chip8_decode(const uint16_t *opc)
         {
             case 0x0000U:
             {
-                switch((*opc & 0x000FU))
+                switch((*opc & 0x0FFFU))
                 {
 
-                    case 0x0000U: //CLS
+                    case 0x00E0U: //CLS
                     {
                         graphics_clear();
                         draw_flag = 1;
                         pc+=2;
                     }
                     break;
-                    case 0x000EU:   //RET
+                    case 0x00EEU:   //RET
                     {
                         sp--;
                         pc = stack[sp];
                     }
                     break;
+
                     default:
-                        pc+=2;
+                    {
+                        uint16_t address =(*opc & 0x0FFFU);
+                        if (address >= 0x0200U && address <= 0x0FFEU){
+                            pc = address;
+                        } else {
+                            printf("0x0NNN error opcode - address wrong");
+                        }
+                    }
                         break;
                 }
             }
@@ -411,7 +419,13 @@ chip8_decode(const uint16_t *opc)
             break;
             case 0xB000U:
             {
-                pc = V[0x0] + (*opc & 0x0FFFU);
+                uint16_t address = (*opc & 0x0FFFU);
+                if(address >= 0x0200U && address <= 0x0FFEU && ((address % 2) == 0)) {
+                    pc = V[0x0] + (*opc & 0x0FFFU);
+                } else
+                {
+                    printf("0xB000 opcode: error on address");
+                }
             }
             break;
             case 0xC000U:
@@ -552,15 +566,18 @@ chip8_decode(const uint16_t *opc)
                         {
                             memory[I+i] = V[i];
                         }
+                        I = I + tmp + 1;
                         pc+=2;
                     }
                     break;
                     case 0x0065U:
                     {
-                        for(uint8_t i = 0;i <= ((*opc &0x0F00U)>>8U);i++)
+                        uint8_t tmp = ((*opc & 0x0F00U) >> 8U);
+                        for(uint8_t i = 0;i <= tmp; i++)
                         {
                              V[i] = memory[I + i];
                         }
+                        I = I+ tmp + 1;
                         pc+=2;
                     }
                     break;

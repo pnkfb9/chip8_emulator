@@ -14,14 +14,10 @@
     <list default="true" id="6527dd6e-e99a-4171-8fe8-99bd1c624a17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chip8_core.c" beforeDir="false" afterPath="$PROJECT_DIR$/chip8_core.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chip8_core.h" beforeDir="false" afterPath="$PROJECT_DIR$/chip8_core.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/chip8_core.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/chip8_core.c.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/graphics.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/graphics.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/main.c.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/main.c.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/untitled" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphics.c" beforeDir="false" afterPath="$PROJECT_DIR$/graphics.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +83,9 @@
       <workItem from="1588405363010" duration="15652000" />
       <workItem from="1588878356196" duration="2780000" />
       <workItem from="1589011184127" duration="849000" />
-      <workItem from="1589022951857" duration="4214000" />
+      <workItem from="1589022951857" duration="4719000" />
+      <workItem from="1589542432482" duration="1340000" />
+      <workItem from="1589573973227" duration="3446000" />
     </task>
     <servers />
   </component>
@@ -113,25 +111,25 @@
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
     <state x="743" y="276" width="424" height="491" key="FileChooserDialogImpl/0.0.1920.1038@0.0.1920.1038" timestamp="1588361835695" />
-    <state width="1878" height="227" key="GridCell.Tab.0.bottom" timestamp="1589028001025">
+    <state width="1878" height="180" key="GridCell.Tab.0.bottom" timestamp="1589577400696">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="227" key="GridCell.Tab.0.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1589028001025" />
+    <state width="1878" height="180" key="GridCell.Tab.0.bottom/0.0.1920.1038@0.0.1920.1038" timestamp="1589577400696" />
     <state width="1358" height="275" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
-    <state width="1878" height="227" key="GridCell.Tab.0.center" timestamp="1589028001024">
+    <state width="1878" height="180" key="GridCell.Tab.0.center" timestamp="1589577400695">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="227" key="GridCell.Tab.0.center/0.0.1920.1038@0.0.1920.1038" timestamp="1589028001024" />
+    <state width="1878" height="180" key="GridCell.Tab.0.center/0.0.1920.1038@0.0.1920.1038" timestamp="1589577400695" />
     <state width="1358" height="275" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
-    <state width="1878" height="227" key="GridCell.Tab.0.left" timestamp="1589028001024">
+    <state width="1878" height="180" key="GridCell.Tab.0.left" timestamp="1589577400695">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="227" key="GridCell.Tab.0.left/0.0.1920.1038@0.0.1920.1038" timestamp="1589028001024" />
+    <state width="1878" height="180" key="GridCell.Tab.0.left/0.0.1920.1038@0.0.1920.1038" timestamp="1589577400695" />
     <state width="1358" height="275" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852730" />
-    <state width="1878" height="227" key="GridCell.Tab.0.right" timestamp="1589028001024">
+    <state width="1878" height="180" key="GridCell.Tab.0.right" timestamp="1589577400695">
       <screen x="0" y="0" width="1920" height="1038" />
     </state>
-    <state width="1878" height="227" key="GridCell.Tab.0.right/0.0.1920.1038@0.0.1920.1038" timestamp="1589028001024" />
+    <state width="1878" height="180" key="GridCell.Tab.0.right/0.0.1920.1038@0.0.1920.1038" timestamp="1589577400695" />
     <state width="1358" height="275" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1584203852731" />
     <state width="1878" height="418" key="GridCell.Tab.1.bottom" timestamp="1588884511736">
       <screen x="0" y="0" width="1920" height="1038" />
@@ -176,12 +174,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/chip8_core.c</url>
-          <line>433</line>
+          <line>447</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/chip8_core.c</url>
-          <line>274</line>
+          <line>282</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -191,12 +189,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/chip8_core.c</url>
-          <line>304</line>
+          <line>312</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/chip8_core.c</url>
-          <line>286</line>
+          <line>294</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">

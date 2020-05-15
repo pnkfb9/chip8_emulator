@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/panc/CLionProjects/untitled/chip8_core.c
-graphics.h
-/home/panc/CLionProjects/untitled/graphics.h
-chip8_core.h
-/home/panc/CLionProjects/untitled/chip8_core.h
-string.h
--
-bits/types/FILE.h
--
-stdio.h
--
-stdlib.h
--
-time.h
--
-
 /home/panc/CLionProjects/untitled/chip8_core.h
 stdint.h
 -
@@ -29,4 +13,14 @@ stdint.h
 /home/panc/CLionProjects/untitled/graphics.h
 SDL2/SDL.h
 -
+
+/home/panc/CLionProjects/untitled/main.c
+stdio.h
+-
+time.h
+-
+chip8_core.h
+/home/panc/CLionProjects/untitled/chip8_core.h
+graphics.h
+/home/panc/CLionProjects/untitled/graphics.h
 
