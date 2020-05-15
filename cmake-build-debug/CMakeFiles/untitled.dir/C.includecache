@@ -19,6 +19,8 @@ stdio.h
 -
 time.h
 -
+unistd.h
+-
 chip8_core.h
 /home/panc/CLionProjects/untitled/chip8_core.h
 graphics.h
